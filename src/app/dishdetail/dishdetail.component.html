@@ -1,0 +1,72 @@
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+  <div fxFlex="40"  >
+    <div fxFlex *ngIf="dish">
+    <md-card>
+               <md-card-header>
+                   <md-card-title>
+                       <h3>{{dish.name | uppercase}}</h3>
+                   </md-card-title>
+                   
+                  <img  height="300px"src="{{dish.image}}" alt="{{dish.name}}">
+               </md-card-header>
+               
+               <md-card-content>
+                   <p> {{dish.description}}</p>
+               </md-card-content>
+               <md-card-actions>
+
+                 <button md-button (click)="goBack()">Back</button>
+                   <button md-button>LIKE</button>
+                   <button md-button>SHARED</button>
+               </md-card-actions>
+           </md-card>
+  </div>
+ 
+
+    </div>
+    </div>
+
+    <div fxFlex="40">
+        <md-list *ngIf="dish" fxFlex>
+          <h1 mdLine>Comments</h1>
+          <md-list-item *ngFor="let comment of dish.comments">
+            <!-- one-way interpolation/data binding ; mat-list-avatar and mat-line are part
+          of the mat list component-->
+            <p mdLine>
+              <span>
+                {{comment.comment}}
+              </span>
+            </p>
+            <p mdLine>
+              <span>
+                {{comment.rating}} Stars
+              </span>
+            </p>
+            <p mdLine>
+              <span>
+               -- {{comment.author}} {{comment.date | date}}
+              </span>
+            </p>
+            <br>
+          </md-list-item>
+        </md-list>
+      </div>
+      <div [hidden]="dish">
+          <md-spinner></md-spinner><h4>Loading.. please wait</h4>
+      </div>
+    
+    
+    
+  
+
+
+
+
+
