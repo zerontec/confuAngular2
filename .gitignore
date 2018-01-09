@@ -40,3 +40,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/assets/images/__MACOSX/images/._.DS_Store
+src/assets/images/__MACOSX/images/._.DS_Store

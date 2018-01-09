@@ -16,7 +16,11 @@ selectdLeader: Leader;
 
   ngOnInit() {
 
+<<<<<<< HEAD
 this.leaderService.getLeaders().subscribe(leaders => this.leaders = leaders);
+=======
+this.leaderService.getLeaders().then(leaders => this.leaders = leaders);
+>>>>>>> 38ed3e0db41f6eb4a29edf5cc6d38fbe27d0d6f9
 
   }
 
