@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DISHES } from '../shared/dishes';
 //import { setTimeout } from  'timers';
+import { Observable} from 'rxjs/Observable';
+
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/observable/of';
 
 
 @Injectable()
@@ -10,24 +14,22 @@ export class DishService {
   constructor() { }
 
 
-   getDishes(): Promise<Dish[]> {
+   getDishes(): Observable<Dish[]> {
 
-    return new Promise ( resolve => {
-//simulado lactancia de 2 segundos 
-setTimeout(() => resolve(DISHES), 2000);
-    });
+    return Observable.of(DISHES).delay (2000);
+    }
+  
+
+  getDish(id: number): Observable<Dish>{
+
+    return Observable.of(DISHES.filter((dish) => (dish.id === id)) [0]).delay (2000);
   }
 
-  getDish(id: number): Promise<Dish>{
+  getFeaturedDish(): Observable<Dish> {
 
-    return new Promise(resolve =>{setTimeout(() => resolve (DISHES.filter((dish) => (dish.id === id) ) [0]), 2000);
-  });}
-
-  getFeaturedDish(): Promise<Dish> {
-
-    return new  Promise (resolve =>{ setTimeout(() => resolve (DISHES.filter((dish) => (dish.featured))[0]), 2000);
+    return Observable.of(DISHES.filter((dish) => (dish.featured))[0]).delay(2000);
 
 
-  });}
+  }
 
 }

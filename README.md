@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ConFu
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# confuAngular2
+Proyecto Courses Angular 
+>>>>>>> ac8fd001ad563c99606dca00b8627dac47c5f172
