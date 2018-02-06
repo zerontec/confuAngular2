@@ -1,6 +1,6 @@
 export class Feedback {
 
-    firtsname: string;
+    firstname: string;
     lastname: string;
     telnum: number;
     email:string;
